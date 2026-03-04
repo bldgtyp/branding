@@ -2,7 +2,7 @@
 
 The canonical brand and UI reference for all BLDGTYP web products.
 
-**Live site:** https://bldgtyp.github.io/brand
+**Live site:** https://bldgtyp.github.io/branding/
 
 ## What's here
 
@@ -24,7 +24,7 @@ brand/
 Import the CSS tokens in any BLDGTYP web product:
 
 ```css
-@import url('https://bldgtyp.github.io/brand/tokens/tokens.css');
+@import url('https://bldgtyp.github.io/branding/tokens/tokens.css');
 ```
 
 Then set `data-theme="light"` or `data-theme="dark"` on `<html>` and use the custom properties:

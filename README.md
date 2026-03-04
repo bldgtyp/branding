@@ -7,11 +7,12 @@ The canonical brand and UI reference for all BLDGTYP web products.
 ## What's here
 
 ```
-brand/
-├── index.html          ← Design system site (GitHub Pages)
+branding/
+├── index.html              ← Design system site (GitHub Pages)
 ├── tokens/
-│   ├── tokens.css      ← CSS custom properties (importable)
-│   └── tokens.json     ← Machine-readable design tokens
+│   ├── tokens.css          ← CSS custom properties (colors, fonts, spacing)
+│   ├── components.css      ← Reusable component classes (buttons, cards, etc.)
+│   └── tokens.json         ← Machine-readable design tokens
 ├── assets/
 │   ├── hero-drafting.png
 │   ├── detail-foundation.png
@@ -21,20 +22,83 @@ brand/
 
 ## Quick start
 
-Import the CSS tokens in any BLDGTYP web product:
+```html
+<!-- 1. Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- 2. Tokens (required) -->
+<link rel="stylesheet" href="https://bldgtyp.github.io/branding/tokens/tokens.css">
+
+<!-- 3. Components (optional) -->
+<link rel="stylesheet" href="https://bldgtyp.github.io/branding/tokens/components.css">
+
+<!-- 4. Set theme -->
+<html data-theme="light">
+```
+
+**Tokens only** — if you just need colors, fonts, and spacing variables:
 
 ```css
 @import url('https://bldgtyp.github.io/branding/tokens/tokens.css');
 ```
 
-Then set `data-theme="light"` or `data-theme="dark"` on `<html>` and use the custom properties:
+Then use custom properties like `var(--accent)`, `var(--bg-page)`, `var(--font-primary)`, etc.
 
-```css
-body {
-    background-color: var(--bg-page);
-    color: var(--text-primary);
-    font-family: var(--font-primary);
-}
+## Architecture
+
+The system is split into two layers so consuming apps can opt in to what they need:
+
+**`tokens.css`** — Pure CSS custom properties. Zero selectors, zero side-effects. Import this everywhere.
+
+**`components.css`** — Reusable UI classes built on top of the tokens. Import this when you want pre-built buttons, cards, typography, etc.
+
+## Available components
+
+### Buttons
+- `.btn-primary` — Accent background, white text CTA
+- `.btn-ghost` — Transparent with subtle border
+
+### Icon buttons
+- `.icon-btn` — 32px square with SVG icon
+- `.nav-icons` — Flex container for grouping icon buttons
+
+### Service card
+- `.service-card` — Card with accent bottom border, highlight top on hover
+- `.service-card__title` — Uppercase, accent-colored title
+- `.service-card__subtitle` — Medium weight subtitle
+- `.service-card__body` — Body text
+
+### Stats bar
+- `.stats-bar` — Always-dark stats grid container
+- `.stats-bar__number` — Large accent-colored number
+- `.stats-bar__label` — Mono uppercase muted label
+
+### Section label
+- `.section-label` — Mono, uppercase, accent-colored section marker
+
+### Graph paper backgrounds
+- `.graph-paper` — Standard density (20px minor / 100px major)
+- `.graph-paper--medium` — Medium density (12px / 60px)
+- `.graph-paper--fine` — Fine density (6px / 30px)
+
+### Typography helpers
+- `.type-hero` — Hero title (clamp 3rem–5.5rem)
+- `.type-heading` — Section heading (42px)
+- `.type-subheading` — Subheading (20px)
+- `.type-body` — Standard body (16px)
+- `.type-body-lg` — Large body (17px)
+- `.type-mono-label` — Mono uppercase accent label
+- `.type-mono-nav` — Mono nav link with hover state
+
+### Theme toggle
+- `.theme-toggle` — 32px square theme-switch button
+
+## Design tokens (JSON)
+
+For tooling, code generation, or non-CSS consumers:
+
+```
+https://bldgtyp.github.io/branding/tokens/tokens.json
 ```
 
 ## Products using this system
@@ -47,7 +111,7 @@ body {
 
 ## Fonts
 
-Load from Google Fonts:
+Load from Google Fonts (not bundled to avoid duplication):
 
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -55,4 +119,4 @@ Load from Google Fonts:
 
 ---
 
-*Building-Type LLC &middot; 2026*
+*Building-Type LLC · 2026*

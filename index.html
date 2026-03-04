@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLDGTYP Design System</title>
     <link rel="stylesheet" href="tokens/tokens.css">
+    <link rel="stylesheet" href="tokens/components.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
     <style>
         /* ========== BASE ========== */
@@ -55,39 +56,6 @@
 
         .nav-links a:hover { color: var(--accent); }
 
-        .theme-toggle {
-            width: 32px; height: 32px;
-            background: transparent; border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm); cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 16px; transition: all var(--transition-base);
-            color: var(--text-primary);
-        }
-
-        .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
-
-        /* ========== ICON BUTTONS ========== */
-        .icon-btn {
-            width: 32px; height: 32px;
-            background: transparent; border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm); cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            transition: all var(--transition-base);
-            color: var(--text-secondary);
-            text-decoration: none;
-        }
-
-        .icon-btn svg {
-            width: 16px; height: 16px;
-            fill: currentColor;
-        }
-
-        .icon-btn:hover {
-            border-color: var(--accent); color: var(--accent);
-        }
-
-        .nav-icons { display: flex; gap: 8px; align-items: center; }
-
         /* ========== LAYOUT ========== */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 
@@ -131,11 +99,7 @@
         }
 
         /* ========== SECTION HEADERS ========== */
-        .section-label {
-            font-family: var(--font-mono); font-weight: 300; font-size: 12px;
-            letter-spacing: 0.15em; text-transform: uppercase;
-            color: var(--accent); margin-bottom: 48px; display: block;
-        }
+        /* .section-label is in components.css */
 
         h2 {
             font-family: var(--font-primary); font-weight: 600;
@@ -250,139 +214,26 @@
         }
 
         /* ========== COMPONENT DEMOS ========== */
+        /* Buttons, cards, icon buttons, graph paper, stats bar,
+           section labels, and theme toggle are in components.css */
+
         .demo-row {
             display: flex; gap: 24px; flex-wrap: wrap;
             align-items: flex-start; margin-top: 24px;
         }
 
-        .btn-primary {
-            font-family: var(--font-mono); font-weight: 400; font-size: 13px;
-            letter-spacing: 0.1em; text-transform: uppercase;
-            background-color: var(--accent); color: #ffffff;
-            border: none; padding: 16px 42px;
-            border-radius: var(--radius-sm); cursor: pointer;
-            transition: all var(--transition-base); text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-dark); transform: translateY(-2px);
-        }
-
-        .btn-ghost {
-            font-family: var(--font-mono); font-weight: 400; font-size: 13px;
-            letter-spacing: 0.1em; text-transform: uppercase;
-            background: transparent; color: var(--text-secondary);
-            border: 1px solid var(--border-subtle); padding: 16px 42px;
-            border-radius: var(--radius-sm); cursor: pointer;
-            transition: all var(--transition-base); text-decoration: none;
-        }
-
-        .btn-ghost:hover {
-            border-color: var(--accent); color: var(--accent);
-        }
-
-        .demo-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: var(--radius-sm);
-            padding: 40px 32px;
-            border-top: 3px solid var(--border-card);
-            border-bottom: 2px solid var(--accent);
-            max-width: 340px;
-            transition: all var(--transition-base);
-        }
-
-        .demo-card:hover {
-            border-top-color: var(--highlight);
-        }
-
-        .demo-card-title {
-            font-family: var(--font-primary); font-weight: 600; font-size: 16px;
-            letter-spacing: 0.1em; text-transform: uppercase;
-            color: var(--accent); margin-bottom: 12px;
-        }
-
-        .demo-card-subtitle {
-            font-family: var(--font-primary); font-weight: 500; font-size: 20px;
-            color: var(--text-primary); margin-bottom: 16px; line-height: 1.4;
-        }
-
-        .demo-card-body {
-            font-family: var(--font-primary); font-weight: 300; font-size: 15px;
-            line-height: 1.7; color: var(--text-secondary);
-        }
-
-        /* ========== GRAPH PAPER DEMO ========== */
+        /* Demo-page graph paper container (adds padding/border for showcase) */
         .graph-paper-demo {
-            position: relative;
             padding: 60px 40px;
             margin-top: 24px;
-            border-radius: var(--radius-sm);
             border: 1px solid var(--border-card);
-            overflow: hidden;
-        }
-
-        /* Standard: 20px minor / 100px major */
-        .graph-paper-demo--standard::before,
-        .graph-paper-demo:not([class*="graph-paper-demo--"])::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            pointer-events: none;
-            background-image:
-                url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='20' y2='0' stroke='rgba(122,148,36,0.06)' stroke-width='0.5'/%3E%3Cline x1='0' y1='0' x2='0' y2='20' stroke='rgba(122,148,36,0.06)' stroke-width='0.5'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='none' stroke='rgba(122,148,36,0.12)' stroke-width='0.8'/%3E%3C/svg%3E");
-            background-size: 20px 20px, 100px 100px;
-        }
-
-        /* Medium: 12px minor / 60px major */
-        .graph-paper-demo--medium::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            pointer-events: none;
-            background-image:
-                url("data:image/svg+xml,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='12' y2='0' stroke='rgba(122,148,36,0.06)' stroke-width='0.5'/%3E%3Cline x1='0' y1='0' x2='0' y2='12' stroke='rgba(122,148,36,0.06)' stroke-width='0.5'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='60' height='60' fill='none' stroke='rgba(122,148,36,0.12)' stroke-width='0.8'/%3E%3C/svg%3E");
-            background-size: 12px 12px, 60px 60px;
-        }
-
-        /* Fine: 6px minor / 30px major */
-        .graph-paper-demo--fine::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            pointer-events: none;
-            background-image:
-                url("data:image/svg+xml,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='6' y2='0' stroke='rgba(122,148,36,0.06)' stroke-width='0.5'/%3E%3Cline x1='0' y1='0' x2='0' y2='6' stroke='rgba(122,148,36,0.06)' stroke-width='0.5'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg width='30' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='30' fill='none' stroke='rgba(122,148,36,0.12)' stroke-width='0.8'/%3E%3C/svg%3E");
-            background-size: 6px 6px, 30px 30px;
+            border-radius: var(--radius-sm);
         }
 
         .graph-paper-demo p {
             position: relative; z-index: 1;
             font-family: var(--font-mono); font-weight: 300; font-size: 12px;
             color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase;
-        }
-
-        /* ========== STATS BAR DEMO ========== */
-        .stats-demo {
-            background-color: #111111;
-            padding: 60px 40px;
-            border-radius: var(--radius-sm);
-            margin-top: 24px;
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 40px;
-        }
-
-        .stat-item {}
-
-        .stat-number {
-            font-family: var(--font-primary); font-weight: 600; font-size: 48px;
-            line-height: 1.1; color: var(--accent);
-        }
-
-        .stat-label {
-            font-family: var(--font-mono); font-weight: 300; font-size: 12px;
-            letter-spacing: 0.08em; text-transform: uppercase;
-            color: #6b7280; margin-top: 8px;
         }
 
         /* ========== CODE BLOCK ========== */
@@ -475,7 +326,7 @@
             .hero { padding: 100px 0 60px; }
             .swatch-row { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
             .nav-links { display: none; }
-            .stats-demo { grid-template-columns: 1fr 1fr; }
+            .stats-bar { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -833,31 +684,31 @@
 
         <h3>Service Card</h3>
         <div class="demo-row">
-            <div class="demo-card">
-                <div class="demo-card-title">Energy Modeling</div>
-                <div class="demo-card-subtitle">Know before you build</div>
-                <div class="demo-card-body">We model your building's thermal performance during the design phase, giving you data-driven confidence before breaking ground.</div>
+            <div class="service-card">
+                <div class="service-card__title">Energy Modeling</div>
+                <div class="service-card__subtitle">Know before you build</div>
+                <div class="service-card__body">We model your building's thermal performance during the design phase, giving you data-driven confidence before breaking ground.</div>
             </div>
-            <div class="demo-card">
-                <div class="demo-card-title">Thermal Bridges</div>
-                <div class="demo-card-subtitle">Find the hidden losses</div>
-                <div class="demo-card-body">Detailed 2D and 3D thermal analysis of critical junctions &mdash; foundations, windows, balconies &mdash; where energy is quietly leaking.</div>
+            <div class="service-card">
+                <div class="service-card__title">Thermal Bridges</div>
+                <div class="service-card__subtitle">Find the hidden losses</div>
+                <div class="service-card__body">Detailed 2D and 3D thermal analysis of critical junctions &mdash; foundations, windows, balconies &mdash; where energy is quietly leaking.</div>
             </div>
         </div>
 
         <h3>Stats Bar (Always Dark)</h3>
-        <div class="stats-demo">
-            <div class="stat-item">
-                <div class="stat-number">65,000+</div>
-                <div class="stat-label">Certified units in the US</div>
+        <div class="stats-bar" style="margin-top: 24px;">
+            <div>
+                <div class="stats-bar__number">65,000+</div>
+                <div class="stats-bar__label">Certified units in the US</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">90%</div>
-                <div class="stat-label">Energy reduction</div>
+            <div>
+                <div class="stats-bar__number">90%</div>
+                <div class="stats-bar__label">Energy reduction</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">60+</div>
-                <div class="stat-label">Years of research</div>
+            <div>
+                <div class="stats-bar__number">60+</div>
+                <div class="stats-bar__label">Years of research</div>
             </div>
         </div>
 
@@ -872,18 +723,18 @@
         <p style="color: var(--text-secondary); margin-bottom: 8px;">Three density variants. Use Standard for hero/section backgrounds, Medium for data views, and Fine for technical/detail contexts.</p>
 
         <div style="font-family: var(--font-mono); font-weight: 300; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 24px; margin-bottom: 8px;">Standard &mdash; 20px minor / 100px major</div>
-        <div class="graph-paper-demo graph-paper-demo--standard">
-            <p>graph-paper-demo--standard &mdash; Services, Process, hero sections</p>
+        <div class="graph-paper-demo graph-paper">
+            <p>graph-paper (default) &mdash; Services, Process, hero sections</p>
         </div>
 
         <div style="font-family: var(--font-mono); font-weight: 300; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 24px; margin-bottom: 8px;">Medium &mdash; 12px minor / 60px major</div>
-        <div class="graph-paper-demo graph-paper-demo--medium">
-            <p>graph-paper-demo--medium &mdash; Data views, dashboards, PH-Navigator panels</p>
+        <div class="graph-paper-demo graph-paper graph-paper--medium">
+            <p>graph-paper graph-paper--medium &mdash; Data views, dashboards, PH-Navigator panels</p>
         </div>
 
         <div style="font-family: var(--font-mono); font-weight: 300; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 24px; margin-bottom: 8px;">Fine &mdash; 6px minor / 30px major</div>
-        <div class="graph-paper-demo graph-paper-demo--fine">
-            <p>graph-paper-demo--fine &mdash; Technical details, report backgrounds, detail drawings</p>
+        <div class="graph-paper-demo graph-paper graph-paper--fine">
+            <p>graph-paper graph-paper--fine &mdash; Technical details, report backgrounds, detail drawings</p>
         </div>
     </section>
 
@@ -932,14 +783,14 @@
 <span class="comment">/* Minor lines: rgba(122,148,36, 0.06), 0.5px stroke */</span>
 <span class="comment">/* Major lines: rgba(122,148,36, 0.12), 0.8px stroke */</span>
 
-<span class="comment">/* Standard: hero/section backgrounds */</span>
-.<span class="prop">graph-paper-demo--standard</span>  background-size: <span class="val">20px 20px</span>, <span class="val">100px 100px</span>;
+<span class="comment">/* Standard (default): hero/section backgrounds */</span>
+.<span class="prop">graph-paper</span>          background-size: <span class="val">20px 20px</span>, <span class="val">100px 100px</span>;
 
 <span class="comment">/* Medium: dashboards, data views */</span>
-.<span class="prop">graph-paper-demo--medium</span>    background-size: <span class="val">12px 12px</span>, <span class="val">60px 60px</span>;
+.<span class="prop">graph-paper--medium</span>  background-size: <span class="val">12px 12px</span>, <span class="val">60px 60px</span>;
 
 <span class="comment">/* Fine: technical details, reports */</span>
-.<span class="prop">graph-paper-demo--fine</span>      background-size: <span class="val">6px 6px</span>, <span class="val">30px 30px</span>;</code>
+.<span class="prop">graph-paper--fine</span>    background-size: <span class="val">6px 6px</span>, <span class="val">30px 30px</span>;</code>
         </div>
 
         <h3>Theme Switching</h3>
@@ -961,20 +812,70 @@ document.documentElement.dataset.theme =
     <!-- ========== 5. USAGE ========== -->
     <section id="usage">
         <span class="section-label">05 &middot; Usage</span>
-        <h2>Using the Tokens</h2>
-        <p class="section-intro">How to import and use the design system across BLDGTYP products.</p>
+        <h2>Using the Design System</h2>
+        <p class="section-intro">How to import and use the design system across BLDGTYP products. Two files: <code>tokens.css</code> for design tokens (variables), <code>components.css</code> for reusable UI components.</p>
 
-        <h3>CSS Import</h3>
+        <h3>Quick Start</h3>
         <div class="code-block">
-            <code><span class="comment">/* In your stylesheet or &lt;style&gt; tag */</span>
+            <code><span class="comment">&lt;!-- 1. Fonts --&gt;</span>
+&lt;link href="<span class="val">https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700
+  &amp;family=JetBrains+Mono:wght@300;400&amp;display=swap</span>" rel="stylesheet"&gt;
+
+<span class="comment">&lt;!-- 2. Tokens (required) — colors, fonts, radii, transitions --&gt;</span>
+&lt;link rel="stylesheet" href="<span class="val">https://bldgtyp.github.io/brand/tokens/tokens.css</span>"&gt;
+
+<span class="comment">&lt;!-- 3. Components (optional) — buttons, cards, icons, graph paper --&gt;</span>
+&lt;link rel="stylesheet" href="<span class="val">https://bldgtyp.github.io/brand/tokens/components.css</span>"&gt;
+
+<span class="comment">&lt;!-- 4. Set theme on html element --&gt;</span>
+&lt;html data-theme="<span class="val">light</span>"&gt;</code>
+        </div>
+
+        <h3>Tokens Only (Custom Components)</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 8px;">If you only need the design tokens and will build your own components:</p>
+        <div class="code-block">
+            <code><span class="comment">/* Import just the tokens */</span>
 @import url('<span class="val">https://bldgtyp.github.io/brand/tokens/tokens.css</span>');
 
-<span class="comment">/* Then use the custom properties */</span>
+<span class="comment">/* Use custom properties in your own styles */</span>
 .my-button {
   background-color: <span class="prop">var(--accent)</span>;
   font-family: <span class="prop">var(--font-mono)</span>;
   border-radius: <span class="prop">var(--radius-sm)</span>;
 }</code>
+        </div>
+
+        <h3>Using Components</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 8px;">With <code>components.css</code> loaded, use the standard class names directly:</p>
+        <div class="code-block">
+            <code><span class="comment">&lt;!-- Buttons --&gt;</span>
+&lt;button class="<span class="prop">btn-primary</span>"&gt;Get Started&lt;/button&gt;
+&lt;button class="<span class="prop">btn-ghost</span>"&gt;Learn More&lt;/button&gt;
+
+<span class="comment">&lt;!-- Icon button --&gt;</span>
+&lt;a href="..." class="<span class="prop">icon-btn</span>"&gt;
+  &lt;svg ...&gt;&lt;/svg&gt;
+&lt;/a&gt;
+
+<span class="comment">&lt;!-- Service card --&gt;</span>
+&lt;div class="<span class="prop">service-card</span>"&gt;
+  &lt;div class="<span class="prop">service-card__title</span>"&gt;...&lt;/div&gt;
+  &lt;div class="<span class="prop">service-card__subtitle</span>"&gt;...&lt;/div&gt;
+  &lt;div class="<span class="prop">service-card__body</span>"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+<span class="comment">&lt;!-- Graph paper background --&gt;</span>
+&lt;div class="<span class="prop">graph-paper</span>"&gt;...&lt;/div&gt;
+&lt;div class="<span class="prop">graph-paper graph-paper--medium</span>"&gt;...&lt;/div&gt;
+&lt;div class="<span class="prop">graph-paper graph-paper--fine</span>"&gt;...&lt;/div&gt;
+
+<span class="comment">&lt;!-- Stats bar --&gt;</span>
+&lt;div class="<span class="prop">stats-bar</span>"&gt;
+  &lt;div&gt;
+    &lt;div class="<span class="prop">stats-bar__number</span>"&gt;90%&lt;/div&gt;
+    &lt;div class="<span class="prop">stats-bar__label</span>"&gt;Energy reduction&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
         </div>
 
         <h3>JSON Tokens</h3>

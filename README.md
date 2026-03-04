@@ -58,6 +58,9 @@ The system is split into two layers so consuming apps can opt in to what they ne
 - `.btn-primary` — Accent background, white text CTA
 - `.btn-ghost` — Transparent with subtle border
 
+### Links
+- `.link` — Bold (700), highlight color, dotted underline; solid on hover
+
 ### Icon buttons
 - `.icon-btn` — 32px square with SVG icon
 - `.nav-icons` — Flex container for grouping icon buttons

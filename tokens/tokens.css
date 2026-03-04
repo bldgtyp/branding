@@ -1,0 +1,78 @@
+/* ============================================================
+   BLDGTYP Design System — CSS Custom Properties
+   https://github.com/bldgtyp/brand
+
+   Import this file in any BLDGTYP web product:
+     @import url('https://bldgtyp.github.io/brand/tokens/tokens.css');
+
+   Then apply data-theme="light" or data-theme="dark" to <html>.
+   ============================================================ */
+
+/* ---------- Global (theme-invariant) ---------- */
+:root {
+    /* Accent: Olive */
+    --accent:           #7a9424;
+    --accent-light:     #e8ecd8;
+    --accent-dark:      #4a5916;
+
+    /* Highlight: Cool Red */
+    --highlight:        #DC2626;
+    --highlight-light:  #fde8e8;
+    --highlight-dark:   #991b1b;
+
+    /* Fonts */
+    --font-primary:     'Outfit', sans-serif;
+    --font-mono:        'JetBrains Mono', monospace;
+
+    /* Radii */
+    --radius-sm:        3px;
+
+    /* Transitions */
+    --transition-base:  0.3s ease;
+}
+
+/* ---------- Light Theme ---------- */
+[data-theme="light"] {
+    --bg-page:          #ffffff;
+    --bg-card:          #ffffff;
+    --bg-section-alt:   #F8F9FA;
+    --bg-stats:         #111111;
+
+    --text-primary:     #111111;
+    --text-secondary:   #6b7280;
+    --text-muted:       #9ca3af;
+
+    --border-subtle:    #e5e7eb;
+    --border-card:      #e5e7eb;
+
+    /* SVG / graph-paper helpers */
+    --svg-line-heavy:   rgba(0,0,0,0.5);
+    --svg-line-medium:  rgba(0,0,0,0.3);
+    --svg-line-light:   rgba(0,0,0,0.15);
+    --svg-line-faint:   rgba(0,0,0,0.08);
+    --svg-fill-dot:     rgba(0,0,0,0.12);
+    --svg-text:         rgba(0,0,0,0.4);
+}
+
+/* ---------- Dark Theme ---------- */
+[data-theme="dark"] {
+    --bg-page:          #111111;
+    --bg-card:          #1a1a1a;
+    --bg-section-alt:   #161616;
+    --bg-stats:         #0a0a0a;
+
+    --text-primary:     #ffffff;
+    --text-secondary:   #9ca3af;
+    --text-muted:       #6b7280;
+
+    --border-subtle:    #2a2a2a;
+    --border-card:      #2a2a2a;
+
+    /* SVG / graph-paper helpers */
+    --svg-line-heavy:   rgba(255,255,255,0.5);
+    --svg-line-medium:  rgba(255,255,255,0.3);
+    --svg-line-light:   rgba(255,255,255,0.15);
+    --svg-line-faint:   rgba(255,255,255,0.08);
+    --svg-fill-dot:     rgba(255,255,255,0.12);
+    --svg-text:         rgba(255,255,255,0.4);
+}

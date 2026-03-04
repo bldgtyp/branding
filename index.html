@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLDGTYP Design System</title>
-    <link rel="stylesheet" href="tokens/tokens.css">
-    <link rel="stylesheet" href="tokens/components.css">
+    <link rel="stylesheet" href="https://bldgtyp.github.io/brand/tokens/tokens.css">
+    <link rel="stylesheet" href="https://bldgtyp.github.io/brand/tokens/components.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
     <style>
         /* ========== BASE ========== */
@@ -46,15 +46,7 @@
         .nav-right { display: flex; align-items: center; gap: 32px; }
 
         .nav-links { display: flex; gap: 28px; align-items: center; }
-
-        .nav-links a {
-            font-family: var(--font-mono); font-weight: 300; font-size: 11px;
-            letter-spacing: 0.05em; text-transform: uppercase;
-            color: var(--text-secondary); text-decoration: none;
-            transition: color var(--transition-base);
-        }
-
-        .nav-links a:hover { color: var(--accent); }
+        /* nav link typography comes from .type-mono-nav in components.css */
 
         /* ========== LAYOUT ========== */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
@@ -115,8 +107,7 @@
         h3:first-of-type { margin-top: 0; }
 
         .section-intro {
-            font-size: 17px; line-height: 1.7;
-            color: var(--text-secondary); margin-bottom: 48px;
+            margin-bottom: 48px;
             max-width: 700px;
         }
 
@@ -124,8 +115,6 @@
         .swatch-group { margin-bottom: 48px; }
 
         .swatch-group-title {
-            font-family: var(--font-mono); font-weight: 300; font-size: 12px;
-            letter-spacing: 0.1em; text-transform: uppercase;
             color: var(--text-muted); margin-bottom: 20px;
         }
 
@@ -313,10 +302,7 @@
             text-align: center;
         }
 
-        footer p {
-            font-family: var(--font-mono); font-weight: 300; font-size: 12px;
-            letter-spacing: 0.05em; color: var(--text-muted);
-        }
+        /* footer typography uses .type-mono-label from components.css */
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
@@ -337,11 +323,11 @@
     <div class="nav-brand">BLDGTYP <span>Design System</span></div>
     <div class="nav-right">
         <div class="nav-links">
-            <a href="#colors">Colors</a>
-            <a href="#typography">Type</a>
-            <a href="#components">Components</a>
-            <a href="#patterns">Patterns</a>
-            <a href="#usage">Usage</a>
+            <a href="#colors" class="type-mono-nav">Colors</a>
+            <a href="#typography" class="type-mono-nav">Type</a>
+            <a href="#components" class="type-mono-nav">Components</a>
+            <a href="#patterns" class="type-mono-nav">Patterns</a>
+            <a href="#usage" class="type-mono-nav">Usage</a>
         </div>
         <div class="nav-icons">
             <a href="https://www.youtube.com/@edmay8900/playlists" target="_blank" rel="noopener" class="icon-btn" aria-label="YouTube">
@@ -370,11 +356,11 @@
     <section id="colors">
         <span class="section-label">01 &middot; Color Palette</span>
         <h2>Colors</h2>
-        <p class="section-intro">All colors are defined as CSS custom properties in <code>tokens/tokens.css</code>. Theme-invariant accent and highlight colors persist across light and dark modes. Surface and text colors swap with the theme.</p>
+        <p class="section-intro type-body-lg">All colors are defined as CSS custom properties in <code>tokens/tokens.css</code>. Theme-invariant accent and highlight colors persist across light and dark modes. Surface and text colors swap with the theme.</p>
 
         <!-- Accent & Highlight -->
         <div class="swatch-group">
-            <div class="swatch-group-title">Accent &amp; Highlight (Theme-Invariant)</div>
+            <div class="swatch-group-title type-mono-label">Accent &amp; Highlight (Theme-Invariant)</div>
             <div class="swatch-row">
                 <div class="swatch">
                     <div class="swatch-color" style="background-color: #7a9424;"></div>
@@ -423,7 +409,7 @@
 
         <!-- Light surfaces -->
         <div class="swatch-group">
-            <div class="swatch-group-title">Light Theme &mdash; Surfaces &amp; Text</div>
+            <div class="swatch-group-title type-mono-label">Light Theme &mdash; Surfaces &amp; Text</div>
             <div class="swatch-row">
                 <div class="swatch">
                     <div class="swatch-color" style="background-color: #ffffff; border-bottom: 1px solid #e5e7eb;"></div>
@@ -472,7 +458,7 @@
 
         <!-- Dark surfaces -->
         <div class="swatch-group">
-            <div class="swatch-group-title">Dark Theme &mdash; Surfaces &amp; Text</div>
+            <div class="swatch-group-title type-mono-label">Dark Theme &mdash; Surfaces &amp; Text</div>
             <div class="swatch-row">
                 <div class="swatch">
                     <div class="swatch-color" style="background-color: #111111;"></div>
@@ -565,7 +551,7 @@
     <section id="typography">
         <span class="section-label">02 &middot; Typography</span>
         <h2>Type System</h2>
-        <p class="section-intro"><strong>Outfit</strong> for all readable content &mdash; headings, body, subtitles. <strong>JetBrains Mono</strong> for UI labels, navigation, section markers, buttons, and technical annotations. Anything that functions as a "label" rather than content uses mono.</p>
+        <p class="section-intro type-body-lg"><strong>Outfit</strong> for all readable content &mdash; headings, body, subtitles. <strong>JetBrains Mono</strong> for UI labels, navigation, section markers, buttons, and technical annotations. Anything that functions as a "label" rather than content uses mono.</p>
 
         <div class="type-specimen">
             <div class="type-meta">
@@ -662,7 +648,7 @@
     <section id="components">
         <span class="section-label">03 &middot; Components</span>
         <h2>Components</h2>
-        <p class="section-intro">Reusable UI elements. All components use the token system &mdash; they adapt automatically to light and dark themes.</p>
+        <p class="section-intro type-body-lg">Reusable UI elements. All components use the token system &mdash; they adapt automatically to light and dark themes.</p>
 
         <h3>Buttons</h3>
         <div class="demo-row">
@@ -671,7 +657,7 @@
         </div>
 
         <h3>Icon Buttons</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 8px;">32 &times; 32px square buttons with subtle border. Used for external links and utility actions. SVG icons at 16px, inheriting <code>currentColor</code>.</p>
+        <p class="type-body" style="margin-bottom: 8px;">32 &times; 32px square buttons with subtle border. Used for external links and utility actions. SVG icons at 16px, inheriting <code>currentColor</code>.</p>
         <div class="demo-row" style="align-items: center;">
             <a href="https://www.youtube.com/@edmay8900/playlists" target="_blank" rel="noopener" class="icon-btn" aria-label="YouTube">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -679,7 +665,7 @@
             <a href="https://github.com/bldgtyp" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             </a>
-            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; margin-left: 12px;">icon-btn</span>
+            <span class="type-mono-label" style="color: var(--text-muted); font-size: 11px; margin-left: 12px;">icon-btn</span>
         </div>
 
         <h3>Service Card</h3>
@@ -714,25 +700,25 @@
 
         <h3>Section Label</h3>
         <div style="padding: 32px 0;">
-            <span style="font-family: var(--font-mono); font-weight: 300; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
+            <span class="section-label" style="margin-bottom: 0;">
                 04 &middot; How It Works
             </span>
         </div>
 
         <h3>Graph Paper Background</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 8px;">Three density variants. Use Standard for hero/section backgrounds, Medium for data views, and Fine for technical/detail contexts.</p>
+        <p class="type-body" style="margin-bottom: 8px;">Three density variants. Use Standard for hero/section backgrounds, Medium for data views, and Fine for technical/detail contexts.</p>
 
-        <div style="font-family: var(--font-mono); font-weight: 300; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 24px; margin-bottom: 8px;">Standard &mdash; 20px minor / 100px major</div>
+        <div class="type-mono-label" style="color: var(--text-muted); font-size: 11px; margin-top: 24px; margin-bottom: 8px;">Standard &mdash; 20px minor / 100px major</div>
         <div class="graph-paper-demo graph-paper">
             <p>graph-paper (default) &mdash; Services, Process, hero sections</p>
         </div>
 
-        <div style="font-family: var(--font-mono); font-weight: 300; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 24px; margin-bottom: 8px;">Medium &mdash; 12px minor / 60px major</div>
+        <div class="type-mono-label" style="color: var(--text-muted); font-size: 11px; margin-top: 24px; margin-bottom: 8px;">Medium &mdash; 12px minor / 60px major</div>
         <div class="graph-paper-demo graph-paper graph-paper--medium">
             <p>graph-paper graph-paper--medium &mdash; Data views, dashboards, PH-Navigator panels</p>
         </div>
 
-        <div style="font-family: var(--font-mono); font-weight: 300; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 24px; margin-bottom: 8px;">Fine &mdash; 6px minor / 30px major</div>
+        <div class="type-mono-label" style="color: var(--text-muted); font-size: 11px; margin-top: 24px; margin-bottom: 8px;">Fine &mdash; 6px minor / 30px major</div>
         <div class="graph-paper-demo graph-paper graph-paper--fine">
             <p>graph-paper graph-paper--fine &mdash; Technical details, report backgrounds, detail drawings</p>
         </div>
@@ -742,10 +728,10 @@
     <section id="patterns">
         <span class="section-label">04 &middot; Patterns</span>
         <h2>Visual Patterns</h2>
-        <p class="section-intro">Atmospheric image treatments and layout patterns that give BLDGTYP products their distinctive engineering-studio character.</p>
+        <p class="section-intro type-body-lg">Atmospheric image treatments and layout patterns that give BLDGTYP products their distinctive engineering-studio character.</p>
 
         <h3>Hero Background Image</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 16px;">Architectural/drafting illustrations are displayed as atmospheric backgrounds. They should feel like a glimpse of a working studio &mdash; never the focal point.</p>
+        <p class="type-body" style="margin-bottom: 16px;">Architectural/drafting illustrations are displayed as atmospheric backgrounds. They should feel like a glimpse of a working studio &mdash; never the focal point.</p>
 
         <table class="token-table">
             <thead>
@@ -774,7 +760,7 @@
         </table>
 
         <h3>Architectural Detail Drawings</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 16px;">Ching-style line drawings of wall sections, foundations, and details. Always grayscale or muted &mdash; never photographic. Used as atmospheric elements in hero sections or as illustrative elements in report mockups.</p>
+        <p class="type-body" style="margin-bottom: 16px;">Ching-style line drawings of wall sections, foundations, and details. Always grayscale or muted &mdash; never photographic. Used as atmospheric elements in hero sections or as illustrative elements in report mockups.</p>
 
         <h3>Graph Paper Pattern (CSS)</h3>
         <div class="code-block">
@@ -794,7 +780,7 @@
         </div>
 
         <h3>Theme Switching</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 16px;">Attribute-based theming using <code>data-theme="light"</code> or <code>data-theme="dark"</code> on the root <code>&lt;html&gt;</code> element. Default is light. All transitions at 0.3s ease. The Stats section is always dark regardless of theme.</p>
+        <p class="type-body" style="margin-bottom: 16px;">Attribute-based theming using <code>data-theme="light"</code> or <code>data-theme="dark"</code> on the root <code>&lt;html&gt;</code> element. Default is light. All transitions at 0.3s ease. The Stats section is always dark regardless of theme.</p>
         <div class="code-block">
             <code><span class="comment">/* Import the token file */</span>
 @import url('<span class="val">https://bldgtyp.github.io/brand/tokens/tokens.css</span>');
@@ -813,7 +799,7 @@ document.documentElement.dataset.theme =
     <section id="usage">
         <span class="section-label">05 &middot; Usage</span>
         <h2>Using the Design System</h2>
-        <p class="section-intro">How to import and use the design system across BLDGTYP products. Two files: <code>tokens.css</code> for design tokens (variables), <code>components.css</code> for reusable UI components.</p>
+        <p class="section-intro type-body-lg">How to import and use the design system across BLDGTYP products. Two files: <code>tokens.css</code> for design tokens (variables), <code>components.css</code> for reusable UI components.</p>
 
         <h3>Quick Start</h3>
         <div class="code-block">
@@ -832,7 +818,7 @@ document.documentElement.dataset.theme =
         </div>
 
         <h3>Tokens Only (Custom Components)</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 8px;">If you only need the design tokens and will build your own components:</p>
+        <p class="type-body" style="margin-bottom: 8px;">If you only need the design tokens and will build your own components:</p>
         <div class="code-block">
             <code><span class="comment">/* Import just the tokens */</span>
 @import url('<span class="val">https://bldgtyp.github.io/brand/tokens/tokens.css</span>');
@@ -846,7 +832,7 @@ document.documentElement.dataset.theme =
         </div>
 
         <h3>Using Components</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 8px;">With <code>components.css</code> loaded, use the standard class names directly:</p>
+        <p class="type-body" style="margin-bottom: 8px;">With <code>components.css</code> loaded, use the standard class names directly:</p>
         <div class="code-block">
             <code><span class="comment">&lt;!-- Buttons --&gt;</span>
 &lt;button class="<span class="prop">btn-primary</span>"&gt;Get Started&lt;/button&gt;
@@ -879,7 +865,7 @@ document.documentElement.dataset.theme =
         </div>
 
         <h3>JSON Tokens</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 8px;">For build tools, design tools, or any context where you need machine-readable values:</p>
+        <p class="type-body" style="margin-bottom: 8px;">For build tools, design tools, or any context where you need machine-readable values:</p>
         <div class="code-block">
             <code><span class="comment">// fetch or import tokens.json</span>
 const tokens = await fetch(
@@ -917,7 +903,7 @@ tokens.typography.scale.body    <span class="comment">// { weight: 300, size: "1
     <section id="voice">
         <span class="section-label">06 &middot; Voice</span>
         <h2>Brand Voice</h2>
-        <p class="section-intro">BLDGTYP speaks with technical authority while remaining accessible. The focus is always on the client's needs, not the company's credentials.</p>
+        <p class="section-intro type-body-lg">BLDGTYP speaks with technical authority while remaining accessible. The focus is always on the client's needs, not the company's credentials.</p>
 
         <table class="token-table">
             <thead>
@@ -948,7 +934,7 @@ tokens.typography.scale.body    <span class="comment">// { weight: 300, size: "1
 <!-- ========== FOOTER ========== -->
 <footer>
     <div class="container">
-        <p>&copy; 2026 Building-Type LLC &middot; BLDGTYP Design System v1.0.0</p>
+        <p class="type-mono-label" style="color: var(--text-muted);">&copy; 2026 Building-Type LLC &middot; BLDGTYP Design System v1.0.0</p>
     </div>
 </footer>
 

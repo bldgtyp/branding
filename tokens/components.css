@@ -49,7 +49,27 @@
 
 
 /* ==========================================================
-   2. ICON BUTTONS
+   2. LINKS
+   ========================================================== */
+
+.link {
+    color: var(--highlight);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+    transition: color var(--transition-base), text-decoration-color var(--transition-base);
+}
+
+.link:hover {
+    color: var(--highlight-dark);
+    text-decoration-style: solid;
+}
+
+
+/* ==========================================================
+   3. ICON BUTTONS
    ========================================================== */
 
 .icon-btn {
@@ -75,7 +95,7 @@
 
 
 /* ==========================================================
-   3. SERVICE CARD
+   4. SERVICE CARD
    ========================================================== */
 
 .service-card {
@@ -111,7 +131,7 @@
 
 
 /* ==========================================================
-   4. STATS BAR
+   5. STATS BAR
    ========================================================== */
 
 .stats-bar {
@@ -135,7 +155,7 @@
 
 
 /* ==========================================================
-   5. SECTION LABEL
+   6. SECTION LABEL
    ========================================================== */
 
 .section-label {
@@ -146,7 +166,7 @@
 
 
 /* ==========================================================
-   6. GRAPH PAPER BACKGROUNDS
+   7. GRAPH PAPER BACKGROUNDS
    Three density variants applied via ::before pseudo-element.
    Add the class to any positioned container.
    ========================================================== */
@@ -192,7 +212,7 @@
 
 
 /* ==========================================================
-   7. TYPOGRAPHY HELPERS
+   8. TYPOGRAPHY HELPERS
    Opt-in classes for common text patterns.
    ========================================================== */
 
@@ -252,7 +272,7 @@
 
 
 /* ==========================================================
-   8. THEME TOGGLE
+   9. THEME TOGGLE
    ========================================================== */
 
 .theme-toggle {

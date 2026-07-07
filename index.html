@@ -293,6 +293,10 @@
             margin-top: 24px;
         }
 
+        .logo-showcase--icons {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
         .logo-card {
             border: 1px solid var(--border-card);
             border-radius: var(--radius-sm);
@@ -305,6 +309,11 @@
         .logo-card svg.logo-inline {
             max-width: 220px;
             height: auto;
+        }
+
+        .logo-card img.logo-asset {
+            width: 120px;
+            height: 120px;
         }
 
         .logo-inline .logo-struct { fill: #222; }
@@ -323,7 +332,8 @@
         }
 
         @media (max-width: 768px) {
-            .logo-showcase { grid-template-columns: 1fr; }
+            .logo-showcase,
+            .logo-showcase--icons { grid-template-columns: 1fr; }
         }
 
         /* ========== IMAGE TREATMENT ========== */
@@ -1191,6 +1201,57 @@ tokens.typography.scale.body    <span class="comment">// { weight: 400, size: "1
         <span class="section-label">06 &middot; Logos</span>
         <h2>Logos</h2>
         <p class="section-intro type-body-lg">Brand marks for BLDGTYP products. SVG format for web use &mdash; scalable, transparent background, no external dependencies.</p>
+
+        <h3>BLDGTYP Icon</h3>
+        <p class="type-body" style="margin-bottom: 16px;">Isometric block mark for app icons, favicons, tiles, and compact brand surfaces. Use the transparent icon on controlled backgrounds and the tile variants where a fixed square asset is required.</p>
+
+        <div class="logo-showcase logo-showcase--icons">
+            <div class="logo-card">
+                <img class="logo-asset" src="assets/bldgtyp-icon.svg" alt="BLDGTYP icon">
+            </div>
+            <div class="logo-card">
+                <img class="logo-asset" src="assets/bldgtyp-icon-tile-light.svg" alt="BLDGTYP icon on light tile">
+            </div>
+            <div class="logo-card logo-card--dark">
+                <img class="logo-asset" src="assets/bldgtyp-icon-tile-dark.svg" alt="BLDGTYP icon on dark tile">
+            </div>
+        </div>
+
+        <div class="logo-files">
+            <table class="token-table">
+                <thead>
+                    <tr><th>Property</th><th>Value</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>Files</code></td>
+                        <td>
+                            <code>assets/bldgtyp-icon.svg</code><br>
+                            <code>assets/bldgtyp-icon-tile-light.svg</code><br>
+                            <code>assets/bldgtyp-icon-tile-dark.svg</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>ViewBox</code></td>
+                        <td>120 &times; 120</td>
+                    </tr>
+                    <tr>
+                        <td><code>Colors</code></td>
+                        <td>
+                            <span style="display:inline-block;width:12px;height:12px;background:#D6EBF1;border:1px solid #ccc;border-radius:2px;vertical-align:middle;margin-right:4px;"></span> #D6EBF1 &nbsp;
+                            <span style="display:inline-block;width:12px;height:12px;background:#5FB4CD;border-radius:2px;vertical-align:middle;margin-right:4px;"></span> #5FB4CD &nbsp;
+                            <span style="display:inline-block;width:12px;height:12px;background:#3E93AE;border-radius:2px;vertical-align:middle;margin-right:4px;"></span> #3E93AE &nbsp;
+                            <span style="display:inline-block;width:12px;height:12px;background:#2D6B80;border-radius:2px;vertical-align:middle;margin-right:4px;"></span> #2D6B80 &nbsp;
+                            <span style="display:inline-block;width:12px;height:12px;background:#C42977;border-radius:2px;vertical-align:middle;margin-right:4px;"></span> #C42977
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>Usage</code></td>
+                        <td>Compact brand icon, app tile, favicon candidate</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <h3>PH-Tools</h3>
         <p class="type-body" style="margin-bottom: 16px;">Molecular hexagon mark representing the interconnected PH-Tools ecosystem. Four honeycomb cells in brand colors connected by a zigzag bond path with terminal nodes.</p>

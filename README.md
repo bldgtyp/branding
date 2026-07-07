@@ -16,7 +16,10 @@ bt-branding/
 ├── assets/
 │   ├── hero-drafting.png
 │   ├── detail-foundation.png
-│   └── detail-wall-section.png
+│   ├── detail-wall-section.png
+│   ├── bldgtyp-icon.svg
+│   ├── bldgtyp-icon-tile-light.svg
+│   └── bldgtyp-icon-tile-dark.svg
 └── README.md
 ```
 
